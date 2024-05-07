@@ -8,7 +8,7 @@ int yyerror(const char *s);
 %}
 
 
-%token SE SENAO ENQUANTO EXECUTE OBSTACULO CORRIMAO RAMPA ESCADA EQ NEQ OLLIE KICKFLIP GRIND HEELFLIP SEMICOLON LBRACE RBRACE IDENTIFIER
+%token SE SENAO ENQUANTO EXECUTE OBSTACULO CORRIMAO RAMPA ESCADA EQ NEQ OLLIE KICKFLIP GRIND HEELFLIP SEMICOLON LBRACE RBRACE IDENTIFIER LPAREN RPAREN
 
 %left EQ NEQ
 
@@ -26,11 +26,11 @@ statement: if_statement
          | action_statement
          ;
 
-if_statement: SE '(' condition ')' '{' statement '}' 
-            | SE '(' condition ')' '{' statement '}' SENAO '{' statement '}'
+if_statement: SE LPAREN condition RPAREN LBRACE statement RBRACE 
+            | SE LPAREN condition RPAREN LBRACE statement RBRACE SENAO LBRACE statement RBRACE
             ;
 
-loop_statement: ENQUANTO '(' condition ')' '{' statement '}'
+loop_statement: ENQUANTO LPAREN condition RPAREN LBRACE statement RBRACE
                ;
 
 action_statement: EXECUTE action SEMICOLON

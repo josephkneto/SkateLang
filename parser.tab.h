@@ -71,7 +71,9 @@ extern int yydebug;
     SEMICOLON = 272,               /* SEMICOLON  */
     LBRACE = 273,                  /* LBRACE  */
     RBRACE = 274,                  /* RBRACE  */
-    IDENTIFIER = 275               /* IDENTIFIER  */
+    IDENTIFIER = 275,              /* IDENTIFIER  */
+    LPAREN = 276,                  /* LPAREN  */
+    RPAREN = 277                   /* RPAREN  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -84,7 +86,7 @@ union YYSTYPE
 
     char *str;
 
-#line 88 "parser.tab.h"
+#line 90 "parser.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

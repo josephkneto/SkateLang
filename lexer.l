@@ -20,8 +20,11 @@
 ";"                     { return SEMICOLON; }
 "{"                     { return LBRACE; }
 "}"                     { return RBRACE; }
+"("                     { return LPAREN; }
+")"                     { return RPAREN; }
 [a-zA-Z][a-zA-Z0-9_]*   { yylval.str = strdup(yytext); return IDENTIFIER; }
-[ \t\n]                 ;
+[ \t\r]                 ;
+[ ]+                    ;
 .                       { return *yytext; }
 %%
 
