@@ -21,8 +21,8 @@
 "{"                     { return LBRACE; }
 "}"                     { return RBRACE; }
 [a-zA-Z][a-zA-Z0-9_]*   { yylval.str = strdup(yytext); return IDENTIFIER; }
-[ \t\n]                 ; // Ignorar espaços em branco e quebras de linha
-.                       { return *yytext; } // Retornar caracteres individuais como tokens
+[ \t\n]                 ;
+.                       { return *yytext; }
 %%
 
 int yywrap() { return 1; }

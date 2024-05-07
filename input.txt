@@ -1,0 +1,11 @@
+enquanto (obstaculo != escada) {
+    se (obstaculo == corrimao) {
+        execute grind;
+    } senao {
+        se (obstaculo == rampa) {
+            execute ollie;
+        } senao {
+            execute kickflip;
+        }
+    }
+}
